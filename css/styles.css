@@ -1,0 +1,1145 @@
+/* ========================================
+   Mean Girls - Unified Stylesheet
+   ======================================== */
+
+/* ----------------------------------------
+   1. CSS Reset & Base
+   ---------------------------------------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    background-color: #f5f5f5;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ----------------------------------------
+   2. Typography
+   ---------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.section-title {
+    font-size: 4rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 2rem;
+}
+
+.section-subtitle {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.section-subtitle.right-align {
+    text-align: right;
+}
+
+/* ----------------------------------------
+   3. Layout
+   ---------------------------------------- */
+#app {
+    min-height: 100vh;
+}
+
+.content-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section {
+    padding: 4rem 0;
+}
+
+/* ----------------------------------------
+   4. Header & Navigation
+   ---------------------------------------- */
+.section-header {
+    position: relative;
+    z-index: 100;
+}
+
+.home-header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+}
+
+.site-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.mini-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.mini-nav a {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+}
+
+.mini-nav a:hover {
+    opacity: 0.7;
+}
+
+.mini-nav a.active {
+    font-weight: 500;
+}
+
+.header-main {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-title-svg,
+.page-title-svg-collections {
+    height: 80px;
+    width: auto;
+}
+
+.view-toggle {
+    display: flex;
+    gap: 1rem;
+}
+
+.view-icon {
+    width: 24px;
+    height: 24px;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.view-icon:hover,
+.view-icon.active {
+    opacity: 1;
+}
+
+/* ----------------------------------------
+   5. Hero Section (Home)
+   ---------------------------------------- */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    padding: 4rem 2rem;
+}
+
+.hero-title-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.hero-title-list li {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    transition: color 0.3s ease;
+}
+
+.hero-title-list li span {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 300;
+}
+
+.hero-title-list li.active,
+.hero-title-list li:hover {
+    color: #fff;
+}
+
+.scroll-arrow {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(-10px); }
+    60% { transform: translateX(-50%) translateY(-5px); }
+}
+
+/* ----------------------------------------
+   6. Cards & Grids
+   ---------------------------------------- */
+.grid-2-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.grid-4-col {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.card {
+    position: relative;
+}
+
+.card-info {
+    padding: 1rem 0;
+}
+
+.card-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.card-caption {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 300;
+    margin-top: 0.5rem;
+}
+
+.award-icon {
+    color: #e95538;
+}
+
+.placeholder-img {
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 0.75rem;
+}
+
+.placeholder-img.rect-large {
+    aspect-ratio: 16/9;
+}
+
+.placeholder-img.rect-small {
+    aspect-ratio: 3/4;
+}
+
+/* ----------------------------------------
+   7. Notes Carousel
+   ---------------------------------------- */
+.notes-carousel {
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 2rem;
+}
+
+.carousel-item {
+    flex-shrink: 0;
+    width: 100%;
+}
+
+.slide-img {
+    width: 100%;
+    height: auto;
+}
+
+/* ----------------------------------------
+   8. Collections (Home)
+   ---------------------------------------- */
+.collections-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    min-height: 500px;
+}
+
+.pink-card {
+    background-color: #f5c6d0;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.role-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.name-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 4rem;
+    line-height: 1;
+}
+
+.photo-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.portrait {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ----------------------------------------
+   9. About Section
+   ---------------------------------------- */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.about-card {
+    background-color: #fff;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+    border: 1px solid #eee;
+}
+
+.about-card h4 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
+}
+
+.card-bottom {
+    margin-top: auto;
+}
+
+.card-bottom a {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 300;
+    display: block;
+}
+
+.vertical-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.mean-content p {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+}
+
+.mean-content .en-desc {
+    color: #333;
+}
+
+.mean-content .kr-desc {
+    color: #666;
+}
+
+.social-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.social-row {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.social-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    transition: background-color 0.3s ease;
+}
+
+.social-card:hover {
+    background-color: #f5f5f5;
+}
+
+/* ----------------------------------------
+   10. Footer
+   ---------------------------------------- */
+.main-footer {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.footer-logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.men-svg {
+    height: 60px;
+    width: auto;
+}
+
+.footer-pill {
+    width: 120px;
+    height: 60px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.footer-img-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ----------------------------------------
+   11. All Films Page
+   ---------------------------------------- */
+/* Hotgirls Masonry */
+.hotgirls-three-columns {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.hg-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.hg-item {
+    position: relative;
+    overflow: hidden;
+    background-color: #ddd;
+}
+
+.hg-item.portrait-tall {
+    aspect-ratio: 2/3;
+}
+
+.hg-item.landscape {
+    aspect-ratio: 16/9;
+}
+
+.hg-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hg-caption {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 300;
+    display: block;
+    padding: 0.5rem 0;
+}
+
+/* Films Grid */
+.films-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.film-card {
+    text-align: center;
+}
+
+.film-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 300;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+/* Text List */
+.large-text-list li {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    transition: color 0.3s ease;
+}
+
+.large-text-list li:hover {
+    color: #e95538;
+}
+
+.large-text-list sup {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 300;
+}
+
+.show-more {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.plus-icon {
+    margin-right: 0.5rem;
+}
+
+/* List View */
+#view-list {
+    display: block;
+}
+
+#view-list.hidden {
+    display: none;
+}
+
+.list-view-content {
+    border-top: 1px solid #ddd;
+}
+
+.list-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 2rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+.list-row:hover {
+    background-color: #fff;
+}
+
+.list-col.title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.5rem;
+}
+
+.list-col.meta .label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.625rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 0.25rem;
+}
+
+.list-col.meta .value {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+/* Cursor Follow Image */
+#cursor-img {
+    position: fixed;
+    width: 200px;
+    height: 300px;
+    pointer-events: none;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+.list-hover-img {
+    position: fixed;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    pointer-events: none;
+}
+
+/* ----------------------------------------
+   12. Collections List Page
+   ---------------------------------------- */
+.collections-list {
+    padding: 2rem 0;
+}
+
+.collection-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    min-height: 400px;
+    margin-bottom: 0;
+}
+
+.collection-row.reverse {
+    direction: rtl;
+}
+
+.collection-row.reverse > * {
+    direction: ltr;
+}
+
+.col-text {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f5f5f5;
+}
+
+.col-text.left {
+    text-align: left;
+}
+
+.col-text.right {
+    text-align: right;
+}
+
+.col-kicker {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.col-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3.5rem;
+    line-height: 1;
+}
+
+.col-title.align-right {
+    text-align: right;
+}
+
+.read-more {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    margin-top: 1.5rem;
+    display: inline-block;
+}
+
+.col-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.collection-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ----------------------------------------
+   13. Collections Item Page (Sean Baker)
+   ---------------------------------------- */
+.sb-content {
+    padding: 2rem 0;
+}
+
+.sb-header-title {
+    margin-bottom: 3rem;
+}
+
+.sb-header-svg {
+    max-width: 100%;
+    height: auto;
+}
+
+.sb-grid-item {
+    margin-bottom: 1.5rem;
+}
+
+.sb-grid-caption {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 300;
+    display: block;
+    padding: 0.5rem 0;
+}
+
+/* ----------------------------------------
+   14. Film Detail Page
+   ---------------------------------------- */
+.film-hero {
+    padding: 0;
+}
+
+.hero-image-container {
+    position: relative;
+    height: 70vh;
+    overflow: hidden;
+}
+
+.hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-text-overlay {
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+    color: #fff;
+}
+
+.main-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 5rem;
+    line-height: 0.9;
+    margin-bottom: 1rem;
+}
+
+.header-meta {
+    display: flex;
+    gap: 2rem;
+}
+
+.meta-item {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+}
+
+.hero-icons {
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.hero-icons .icon {
+    font-size: 1.5rem;
+}
+
+/* Film Intro */
+.film-intro {
+    padding: 4rem 0;
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.film-poster {
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.synopsis-area {
+    padding-top: 1rem;
+}
+
+.arrow-icon {
+    margin-bottom: 1.5rem;
+}
+
+.synopsis-text {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.intro-credits p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+}
+
+/* Review Banner */
+.review-banner {
+    padding: 0;
+}
+
+.banner-image-container {
+    position: relative;
+    height: 50vh;
+    overflow: hidden;
+}
+
+.banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-quote {
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.5rem;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.banner-quote .source {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 300;
+    margin-top: 1rem;
+}
+
+/* Director Spotlight */
+.director-spotlight {
+    padding: 4rem 0;
+}
+
+.director-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.bw-portrait {
+    width: 100%;
+    filter: grayscale(100%);
+}
+
+.director-name {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 5rem;
+    line-height: 0.9;
+}
+
+/* Film Gallery */
+.film-gallery {
+    padding: 4rem 0;
+}
+
+.gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.gallery-header h3 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Film List Vertical */
+.film-list-vertical {
+    padding: 4rem 0;
+    position: relative;
+}
+
+.list-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.films-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.films-menu li {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding: 0.5rem 0;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.films-menu li.active,
+.films-menu li:hover {
+    opacity: 1;
+}
+
+.list-image-overlay {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40%;
+    pointer-events: none;
+}
+
+.list-image-overlay img {
+    width: 100%;
+}
+
+/* ----------------------------------------
+   15. Responsive Design
+   ---------------------------------------- */
+@media (max-width: 1024px) {
+    .grid-4-col {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hotgirls-three-columns {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hotgirls-three-columns .hg-col:nth-child(2) {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .grid-2-col,
+    .grid-4-col,
+    .collections-container,
+    .collection-row,
+    .intro-grid,
+    .director-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .films-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hotgirls-three-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .hotgirls-three-columns .hg-col:nth-child(2) {
+        grid-column: auto;
+    }
+
+    .list-row {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .hero-title-list li {
+        font-size: 1.5rem;
+    }
+
+    .main-title {
+        font-size: 3rem;
+    }
+
+    .name-title,
+    .col-title {
+        font-size: 2.5rem;
+    }
+
+    .large-text-list li {
+        font-size: 1.5rem;
+    }
+
+    .top-nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .mini-nav {
+        gap: 1rem;
+    }
+}
+
+/* ----------------------------------------
+   16. Utilities
+   ---------------------------------------- */
+.hidden {
+    display: none !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* ----------------------------------------
+   17. Animations
+   ---------------------------------------- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.slide-up {
+    animation: slideUp 0.5s ease forwards;
+}
+
+/* ----------------------------------------
+   18. Cursor Styles
+   ---------------------------------------- */
+/* Default cursor for all elements */
+body {
+    cursor: default;
+}
+
+/* Pointer cursor only on interactive elements */
+a,
+button,
+[role="button"],
+.view-icon,
+.show-more,
+.social-card,
+.collection-link,
+.collection-row a,
+.films-menu li a,
+.large-text-list li a,
+.hero-title-list li a,
+.card-bottom a,
+.read-more {
+    cursor: pointer;
+}
+
+/* Ensure buttons have pointer cursor */
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Collection link styling */
+.collection-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
